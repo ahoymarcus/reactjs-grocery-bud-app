@@ -16,6 +16,7 @@ function App() {
 
   console.log(list);
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(item);
@@ -39,8 +40,13 @@ function App() {
   return (
     <section className="section-center">
       
-      <form onSubmit={handleSubmit} >
-        <h3 className="grocery-form">Grocery Bud App</h3>
+      <form 
+        className="grocery-form" 
+        onSubmit={handleSubmit}
+      >
+        {alert.show && <Alert />}
+        <h3>Grocery Bud App</h3>
+        <div className="form-control"></div>
         <input 
           type="text"
           className="grocery"
@@ -48,13 +54,23 @@ function App() {
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />
-        <button className="submit-btn">Submit</button>
+        <button 
+          className="submit-btn" 
+          type="submit">
+            {isEditing ? 'edit' : 'submit' }
+        </button>
       </form>
      
-        {list && <List list={list} />}
-      
 
-      <button className="clear-btn">Clear items</button>
+      <div className="grocery-container" >
+        <List />
+        <button className="clear-btn"
+        
+        >
+          Clear items
+        </button>
+      </div>
+      
     </section>
   );
 }
