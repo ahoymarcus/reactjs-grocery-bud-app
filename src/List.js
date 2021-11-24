@@ -4,25 +4,30 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 
 
 
-const List = ({ list }) => {
-  console.log(list);
+const List = ({ items }) => {
+  //console.log(items);
 
-  const renderItem = () => {
-    if (list) {
-      renderItem = list.map((item, index) => {
-        return <span key={index} >{item}</span>
-      });
-      return;
-    } else {
-      return null;
-    }
-  };
-  
+  const renderItem = items.map((item) => {
+    const {id, title} = item;
+    return <article className="grocery-item" key={id} >
+      <p className="title">{title}</p>
+      <div className="brn-container">
+        <button type="button" className="edit-btn">
+          <FaEdit />
+        </button>
+        <button type="button" className="delete-btn">
+          <FaTrash />
+        </button>
+      </div>
+    </article>
+  });
   
 
   return (
-    
-    <li>teste</li>
+    <div className="grocery-item">
+
+      {renderItem}
+    </div>
   );
 }
 

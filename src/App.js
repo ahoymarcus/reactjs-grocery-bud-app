@@ -8,20 +8,28 @@ import Alert from './Alert'
 
 
 function App() {
-  const [ item, setItem ] = useState('');
+  const [ name, setName ] = useState('');
   const [ list, setList ] = useState([]);
   const [ isEditing, setIsEditing ] = useState(false);
   const [ editID, setEditID ] = useState(null);
   const [ alert, setAlert ] = useState({show: false, msg: '', type: ''});
 
-  console.log(list);
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(item);
 
-    setList(item);
+    if (!name) {
+      // display alert
+    } else if (name && isEditing) {
+      // deal with edit
+    } else {
+      // show alert
+      const newItem = {id: new Date().getTime().toString(), title: name};
+      setList([...list, newItem]);
+      setName('');
+    }
   };
 
 
@@ -51,8 +59,8 @@ function App() {
           type="text"
           className="grocery"
           placeholder="e.g. eggs"
-          value={item}
-          onChange={(e) => setItem(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <button 
           className="submit-btn" 
@@ -63,7 +71,7 @@ function App() {
      
 
       <div className="grocery-container" >
-        <List />
+        <List items={list} />
         <button className="clear-btn"
         
         >
