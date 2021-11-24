@@ -4,10 +4,26 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 
 
 
-const List = () => {
+const List = ({ list }) => {
+  console.log(list);
 
+  const renderItem = () => {
+    if (list) {
+      renderItem = list.map((item, index) => {
+        return <span key={index} >{item}</span>
+      });
+      return;
+    } else {
+      return null;
+    }
+  };
+  
+  
 
-  return <h2>list component</h2>
+  return (
+    
+    <li>teste</li>
+  );
 }
 
 
