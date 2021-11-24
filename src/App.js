@@ -54,30 +54,33 @@ function App() {
       >
         {alert.show && <Alert />}
         <h3>Grocery Bud App</h3>
-        <div className="form-control"></div>
-        <input 
-          type="text"
-          className="grocery"
-          placeholder="e.g. eggs"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button 
-          className="submit-btn" 
-          type="submit">
-            {isEditing ? 'edit' : 'submit' }
-        </button>
+        <div className="form-control">
+          <input 
+            type="text"
+            className="grocery"
+            placeholder="e.g. eggs"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button 
+            className="submit-btn" 
+            type="submit">
+              {isEditing ? 'edit' : 'submit' }
+          </button>
+        </div>
       </form>
      
-
-      <div className="grocery-container" >
-        <List items={list} />
-        <button className="clear-btn"
-        
-        >
-          Clear items
-        </button>
-      </div>
+      {list.length > 0 &&(
+        <div className="grocery-container" >
+          <List items={list} />
+          <button className="clear-btn"
+          
+          >
+            Clear items
+          </button>
+        </div>
+      )}
+      
       
     </section>
   );

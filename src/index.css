@@ -204,7 +204,7 @@ Grocery List
 .grocery {
   padding: 0.25rem;
   padding-left: 1rem;
-  background: var(--clr-grey-10);
+  background: hsl(210deg 7% 86%); /*var(--clr-grey-10);*/
   border-top-left-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-color: transparent;
