@@ -1,15 +1,24 @@
 // https://www.youtube.com/watch?v=ly3m6mv5qvg
-// 4 hr 37' 00 ''
+// 4 hr 41' 00 ''
 import React, { useState, useEffect } from 'react'
 
 import List from './List'
 import Alert from './Alert'
 
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem('list');
+  if (list) {
+    return JSON.parse(localStorage.getItem('list'));
+  } else {
+    return [];
+  }
+};
+
 
 function App() {
   const [ name, setName ] = useState('');
-  const [ list, setList ] = useState([]);
+  const [ list, setList ] = useState(getLocalStorage());
   const [ isEditing, setIsEditing ] = useState(false);
   const [ editID, setEditID ] = useState(null);
   const [ alert, setAlert ] = useState({
