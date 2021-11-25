@@ -4,7 +4,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 
 
 
-const List = ({ items, removeItem }) => {
+const List = ({ items, removeItem, editItem }) => {
   //console.log(items);
 
 
@@ -15,7 +15,7 @@ const List = ({ items, removeItem }) => {
       <p className="title">{title}</p>
       <div className="brn-container">
         <button type="button" className="edit-btn">
-          <FaEdit />
+          <FaEdit onClick={() => editItem(id)} />
         </button>
         <button type="button" className="delete-btn">
           <FaTrash onClick={() => removeItem(id)} />

@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=ly3m6mv5qvg
-// 3 hr 51' 00 ''
+// 4 hr 37' 00 ''
 import React, { useState, useEffect } from 'react'
 
 import List from './List'
@@ -28,6 +28,20 @@ function App() {
       showAlert(true, "danger", "please, enter a value");
     } else if (name && isEditing) {
       // deal with edit
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return {...item, title: name};
+          }
+
+          return item;
+        })
+      );
+
+      setName('');
+      setEditID(null);
+      setIsEditing(false);
+      showAlert(true, 'success', 'value changed');
     } else {
       // show alert
       showAlert(true, 'success', 'item added to the list');
@@ -51,6 +65,13 @@ function App() {
   const removeItem = (id) => {
     showAlert(true, 'danger', 'item removed');
     setList(list.filter((item) => item.id !== id));
+  };
+
+  const editItem = (id) => {
+    const specificItem = list.find((item) => item.id === id);
+    setIsEditing(true);
+    setEditID(id);
+    setName(specificItem.title);
   };
   
 
@@ -81,7 +102,7 @@ function App() {
      
       {list.length > 0 &&(
         <div className="grocery-container" >
-          <List items={list} removeItem={removeItem} />
+          <List items={list} removeItem={removeItem} editItem={editItem} />
           <button className="clear-btn"
             onClick={clearList}
           >
