@@ -2,11 +2,15 @@
 
 <br />
 
-O projeto consome dados de um arquivo e renderiza os dados num cartão apresentando dados pessoais, especialmente idade e data de aniversário.
+O projeto constrói um app que renderiza um formulário permitindo ao usuário a inserção, edição e remoção dos dados, incluse usando do LocalStorage do browser para persistir os dados guardados.
 
 <br />
 
-**Tendo sido adicionado ao projeto a funcionalidade de selecionar apenas os dados de aniversariantes do dia.**
+Especificamente, o app gerencia a existência ou não de dados preexistentes no LocalStorage, definindo a primeira renderização de maneira condicionada a partir daí.
+
+<br />
+
+Em especial, além das funções anteriormente citadas, o app emite mensagem de alerta ao usuário confirmando as ações realizadas. Ademais, esses alertas são monitorados para terem duração limitada de tempo na tela.
 
 <br />
 
@@ -20,15 +24,33 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 
 <br />
 
-### Imagem do card com Lista de Contatos:
+### Imagem mostrando inserir itens na lista:
 
-![Imagem do card com Lista de Contatos](/public/images/lista-de-contatos.png)
+![Imagem mostrando inserir itens na lista](/public/images/reactjs-grocery-bud-app-01.png)
 
 <br />
 
-### Imagem da funcionalidade acrescida de Aniversariantes do Dia:
+### Imagem mostrando editando um item da lista:
 
-![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/aniversariantes-do-dia.png)
+![Imagem mostrando editando um item da lista](/public/images/reactjs-grocery-bud-app-02.png)
+
+<br />
+
+### Imagem mostrando a remoção de um item da lista:
+
+![Imagem mostrando a remoção de um item da lista](/public/images/reactjs-grocery-bud-app-03.png)
+
+<br />
+
+### Imagem mostrando a remoção de todos os itens da lista:
+
+![Imagem mostrando a remoção de todos os itens da lista](/public/images/reactjs-grocery-bud-app-04.png)
+
+<br />
+
+### Imagem mostrando a persistência dos dados inseridos na lista no LocalStorage do browser:
+
+![Imagem mostrando a persistência dos dados inseridos na lista no LocalStorage do browser](/public/images/reactjs-grocery-bud-app-05.png)
 
 <br />
 <br />
